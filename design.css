@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    /* background-color: #c5edef;  */
+    background-color: #7793ab; 
+    /* display: flex;  */
+    /* flex-direction: column;  */
+    /* align-items: center;  */
+    width: 100%; 
+}
+
+header {
+    width: 100%; 
+    text-align: center; 
+    padding: 20px 0; 
+    /* margin-bottom: 20px;  */
+    background-color: #ffffff; 
+}
+
+header a { 
+    color: #000000; 
+    text-decoration: none; 
+    font-size: 36px; 
+    font-weight: bold;
+}
+
+header img{
+    width: 70%;
+}
+
+.mo_menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1000;
+    align-items: center;
+}
+
+.mo_menu .btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #325675;
+}
+
+.mo_menu .btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #325675 !important; 
+    /* content: ""; */
+    position: relative;
+}
+.mo_menu .btn span::before, 
+.mo_menu .btn span::after { 
+    content: ""; 
+    position: absolute; 
+    width: 25px; 
+    height: 3px; 
+    background-color: #325675;
+    left: 0; 
+    transition: transform 0.3s ease; 
+}
+
+.mo_menu .btn span::before { 
+    top: -8px; 
+} 
+
+.mo_menu .btn span::after { 
+    top: 8px; 
+}
+
+#mo-nav {
+    display: none;
+    background-color: #fff; 
+    width: 30%; 
+    position: fixed; 
+    top: 0; 
+    right: 0;
+    height: 100%; 
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+#mo-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* flex-direction: column; */
+}
+
+#mo-nav ul li {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    /* flex: 1; */
+    /* width: 100%; */
+    /* box-sizing: border-box; */
+}
+
+#mo-nav ul li a {
+    display: block;
+    color: #000; 
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#mo-nav ul li a:hover {
+    background-color: #cda04f;
+}
+
+#mo-nav ul li.active a {
+    background-color: #7793ab;
+    color: #ffffff;
+}
+
+#mo_nav {
+    display: none;
+}
+
+#mo_pagetitle {
+    display: none;
+}
+
+.pc_menu nav ul {
+    list-style: none; 
+    display: flex; 
+    justify-content: center; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.pc_menu nav ul li {
+    margin: 0 15px;
+}
+.pc_menu nav ul li a {
+    color: #000000; 
+    text-decoration: none; 
+    font-size: 18px; 
+    transition: color 0.3s, background-color 0.3s; 
+    padding: 10px 15px; /* パディングを追加 */
+    border-radius: 5px; /* 境界を丸くする */
+}
+
+.pc_menu nav ul li a:hover {
+    color: #cda04f;
+}
+
+.pc_menu nav ul li.active a {
+    color: #ffffff;
+    background-color: #cda04f;
+    /* border: 2px solid #11225b; 境界線を追加 */
+}
+
+.menu .description { 
+    padding: 10px; 
+    margin-top: 5px; 
+    white-space: nowrap;
+}
+
+.pic { 
+    width: 100%; 
+    overflow: hidden; 
+    margin-bottom: 20px; 
+} 
+
+.pic img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+
+
+main{
+    width: 80%; 
+    max-width: 1000px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+main img {
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    main img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+    }
+}
+
+
+main h2.heading { 
+    font-size: 24px; 
+    color: #325675; 
+    margin-bottom: 20px; 
+    border-left: 3px solid #325675;
+    padding-left: 10px;
+} 
+
+main h3 { 
+    font-size: 20px; 
+    color: #cda04f; 
+    margin-bottom: 10px; 
+} 
+
+main p { 
+    font-size: 16px; 
+    color: #333; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+} 
+
+main a { 
+    color: #cda04f; 
+    text-decoration: underline; 
+    transition: color 0.3s; 
+} 
+
+main a:hover { 
+    color: #325675;
+}
+
+.double-pic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* overflow: hidden; */
+    /* position: relative; */
+    gap: 10px;
+}
+
+.double-pic img{
+    width: 45%;
+    height: auto;
+    margin: 3px;
+}
+
+@media (max-width: 600px) {
+    .double-pic{
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+    }
+
+    .double-pic img{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.slide-arrow-left {
+    left: 10px;
+}
+
+.slide-arrow-right {
+    right: 10px;
+}
+
+@media (max-width: 600px) {
+    .slide-arrow {
+        display: none;
+    }
+}
+
+/* .double-pic {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    gap: 10px; 
+}
+
+.double-pic img {
+    width: 45%;
+    height: auto;
+    margin: 3px;
+}
+
+@media (max-width: 600px) {
+    .double-pic {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .double-pic img {
+        width: 100%; 
+        flex: 0 0 auto;
+    }
+} */
+
+
+footer { 
+    background-color: #325675; 
+    color: #ffffff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 20px 0; 
+}
+
+footer .left, footer .right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer .left {
+    width: 70%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+footer .right {
+    width: 30%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+footer .right img { 
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    
+    .mo_menu {
+        display: block;
+    }
+    .pc_menu {
+        display: none;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    header {
+        padding: 0;
+        left: 0;
+    }
+}
