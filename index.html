@@ -1,204 +1,167 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<meta name="robots" content="index, follow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
 
-	<meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ" />
-	
-	<title>福井大学フィルハーモニー管弦楽団</title>
+  <title>福井大学フィルハーモニー管弦楽団</title>
 
-<!-- ↓↓↓ display icon on search screen ↓↓↓ -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
-	<link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
-<!-- ↑↑↑ display icon on search screen ↑↑↑　-->
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
 
+  <link rel="stylesheet" href="design.css">
 </head>
 
-	
 <body>
-	<!-- ↓↓↓ common header for all pages ↓↓↓ -->
-	<div> 
-		<header>
-			<!-- click title to toppage -->
-			<a href="index.html"><img src="hp_title.png"></a>
-			
-			<!-- ↓↓↓ smartphone-sized navigation menu ↓↓↓ -->
-			<div class="mo_menu">
-				<!-- span menu -->
-				<div class="btn">
-					<span></span>
-				</div>	
-					
-				<nav id="mo-nav">
-					<ul>
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="overview.html">概要</a></li>
-						<li><a href="welcome.html">団員募集</a></li>
-						<li><a href="concert.html">定期演奏会</a></li>
-					</ul>
-				</nav>
-			</div> <!-- class=mo_menu -->
-			<!-- ↑↑↑　smartphone-sized navigation menu　↑↑↑ -->
-	
-			<!-- ↓↓↓　pc-sized navigation menu　↓↓↓ -->
-			<div class="pc_menu">
-				<nav>
-					<ul> 
-						<li class="active"><a href="index.html">HOME</a></li>
-						<li><a href="overview.html">概要</a></li>
-						<li><a href="welcome.html">団員募集</a></li>
-						<li><a href="concert.html">定期演奏会</a></li>
-					</ul>
-				</nav>
-			</div> <!-- class=pc_menu -->
-			<!-- ↑↑↑ pc-sized navigation menu ↑↑↑ -->
-		</header>
-	</div> <!-- header -->
-	<!-- ↑↑↑ display icon on search screen ↑↑↑ -->
+
+  <!-- ===== ヘッダー ===== -->
+  <header>
+    <a href="index.html">
+      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
+    </a>
+
+    <!-- スマートフォン用メニュー -->
+    <div class="mo_menu">
+      <div class="btn" aria-label="メニューを開く" role="button">
+        <span></span>
+      </div>
+      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
+        <ul>
+          <li class="active"><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <!-- <li><a href="news.html">ニュース</a></li> -->
+          <li><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- PC用メニュー -->
+    <div class="pc_menu">
+      <nav aria-label="PCナビゲーション">
+        <ul>
+          <li class="active"><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <!-- <li><a href="news.html">ニュース</a></li> -->
+          <li><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
 
 
-<main>
-	
-<!-- ↓↓↓ linked image notice ↓↓↓ -->
-	<!-- 
-	<div class="pic">
-		<a href="welcome.html"><img class="bright" src="welcome_pic.jpg" alt="楽器体験会"></a>
-	</div> 
-	-->
-<!-- ↑↑↑ linked image notice ↑↑↑ -->
+  <!-- ===== TOPページ: 概要帯 ===== -->
+  <div class="top-overview">
+    <h3>福井大学フィルハーモニー管弦楽団とは</h3>
+    <p>
+      福井最古のオーケストラとして70回を超える定期演奏会を開催してきました。<br>
+      県内小中学校へ巡回演奏をしたり，地域のお祭りで演奏をするなど地域に根ざした活動をしています。<br>
+      福井大学生をはじめとし，福井大学院生や他大学の学生も活躍しています。<br>
+    </p>
+
+    <img src="overview.png" alt="活動の様子">
+  </div>
+  <!-- ===== /TOPページ: 概要帯 ===== -->
 
 
-<!-- ↓↓↓ no link image notice ↓↓↓ -->
-	<!-- 
-	<div class="pic">
-		<img src="秋まつり宣伝.png" alt="秋まつり">
-	</div> 
-	-->
-<!-- ↑↑↑ no link image notice ↑↑↑ -->
+  <!-- ===== TOPページ: 3カラムカード ===== -->
+  <div class="top-bg">
+    <div class="top-cards">
 
-<!-- ↓↓↓ article ↓↓↓ -->
-	<!--
-	<p> 
-		福井大学フィルハーモニー管弦楽団です！福井大学文京キャンパスで活動している学生のオーケストラサークルです。<br>
-		現在団員募集中です。これから新入生向けに楽器体験会や履修相談会、お花見などイベントの開催を予定しています。<br>
-		開催日時など詳細は公式X、Instagramで更新していきますので要チェックです✓<br> 
-	<\p>
-	-->
-<!-- ↑↑↑ article ↑↑↑ -->
+      <!-- カード1: お知らせ -->
+      <div class="card">
+        <h2 class="heading">定期演奏会のお知らせ</h2>
+        <h3><a href="concert.html">第73回定期演奏会</a></h3>
+        <p>指揮：木許裕介</p>
+        <p>日時：2026年12月20日（日）  13:30開演</p>
+        <p>会場：ハーモニーホールふくい  大ホール</p>
+        <p>
+          曲目：<br>
+          
+        </p>
+        <!-- <p>
+          広告協賛：<a href="https://www.emori.co.jp/">興和江守</a>様をはじめとする
+          多くの企業・団体様に多大なるご協賛を賜り、心より御礼申し上げます。
+        </p> -->
+      </div>
+      
+      <div class="card">
+        <h2 class="heading">その他演奏会のお知らせ</h2>
+        <h3>第1回OB・OG合同演奏会</h3> 
+        <p>日時：2026年</p>
+        <p>会場：</p>
+        <p>曲目：</p>
+        <p>現役団員と卒業生の交流を目的に年に一度の演奏会を開催します。<br>
+        参加登録は<a href="">こちら</a></p>
+      </div>
 
-	<h2 class="heading">お知らせ</h2>
-		<!-- 
-		<div class="新歓">
-			<h3>新入生のみなさまへ</h3>
-				<p>
-					合格おめでとうございます。<br>
-					サークルはお決まりですか？<br>
-					オーケストラに興味がある方もない方も一度体験に来てみてください！<br>
-					楽器体験会も予定しています。<br>
-					詳細は <a href="https://twitter.com/fukudaiphil">X</a> ,
-					 <a href="https://www.instagram.com/fukudaiphil/">Instagram</a> で更新します。<br>
-				</p>
-				<p>
-					サークル見学の希望はX、Instagram のDMにて受け付けています。<br>
-				</p>
-				<br>
-		</div> --> <!-- class=新歓 -->
-		
+      <div class="card">
+        <h2 class="heading">ご支援</h2>
+        <p>
+          <a href="https://www.u-fukui.ac.jp/kikin/">福井大学基金</a>を通じてサークルへご寄附いただけます。
+          メリットとして税制上の優遇措置等があります。
+        </p>
+        <p>
+          ご寄附の方法は<a href="https://www.u-fukui.ac.jp/kikin/lk04/">こちら</a>をご確認ください。<br>
+          なお、ご寄附の際は「③卓越高度専門職業人育成：研究支援事業」をお選びいただき、
+          通信欄やメッセージ欄で「フィルハーモニー管弦楽団」へのご寄附とご指定ください。
+        </p>
+      </div>
 
-		<!-- 	
-		<div class="学祭">  
-			<h3>大学祭出演</h3>
-				<p>●●●　ポケットコンサート　●●●</p>
-				<p>
-					日時：2024年5月25日（土）　大学祭１日目<br>
-			　　　		10:30　開演<br>
-					場所：食堂ホール<br>
-					曲目：パイレーツ・オブ・カリビアン<br>
-			　　　		星に願いを<br>
-			　　　		ラデツキー行進曲
-				</p>
-				<p>新入団員の初舞台です！ぜひ福大フィルの成長を見守ってください</p>
-
-				<br>
-
-				<p>●●●　アンサンブルコンサート　●●●</p>
-				<p>
-					日時：2024年5月26日（日）　大学祭２日目<br>
-					　　　12:00ごろ　演奏<br>
-					場所：教育1号館前　屋外ステージ
-				</p>
-				<p>
-					少人数アンサンブルです<br>
-					屋外で演奏することは珍しいのでぜひ聴いてみてください！
-				</p>
-		</div> --> <!-- class=学祭 -->
- 		
-		
-		<div class="定演">
-			<h3>第73回定期演奏会</h3>
-				<p>指揮：木許裕介</p>
-				<p>日時：2026年1月25日 (日)　　13:30開演</p>
-				<p>会場：ハーモニーホールふくい　大ホール</p>
-				<p>曲目：ラフマニノフ/交響曲第2番<br>
-		　　　			ボロディン/歌劇《イーゴリ公》より〈ポロヴェッツ人の踊り〉<br>
-		　　　			J.シュトラウスⅡ/ワルツ「美しく青きドナウ」</p>
-			<br>
-			<p>広告協賛：<a href="https://www.emori.co.jp/">興和江守</a>様をはじめとする多くの企業・団体様に多大なるご協賛を賜り、心より御礼申し上げます。</p>
-		</div> <!-- class=定演 -->
-
-		<br>
-
-	<h2 class="heading">ご支援</h2>
-		<p>
-			<a href="https://www.u-fukui.ac.jp/kikin/">福井大学基金</a>を通じてサークルへご寄附いただけます。メリットとして税制上の優遇措置等があります。
-		</p>
-		<p>
-			ご寄附の方法： <a href="https://www.u-fukui.ac.jp/kikin/lk04/"> こちら</a>にてご確認ください。<br>
-			なお、ご寄附の際は、「③卓越高度専門職業人育成：研究支援事業」へのご寄附をお選びいただき、通信欄やメッセージ欄で「フィルハーモニー管弦楽団」への寄附とご指定下さい。
-		</p>
-
-	<h2 class="heading">ご案内</h2>
-		<p>新入生の方へ →　<a href="welcome.html">新歓情報</a></p>
-		<p>　楽器体験会など新入生向けのイベント紹介をしています</p>
-		<br>
-	
-		<p>演奏会情報をお求めの方へ →　<a href="concert.html">演奏会情報</a></p>
-		<p>　次回定期演奏会のお知らせ、過去の定期演奏会を紹介しています</p>
-		<br>
-</main>
-
-<!---------- footer ---------->
-<div>
-	<footer>
-		<!-- ↓↓↓ common header for all pages ↓↓↓ -->
-		<div class="left">
-			<p>福井大学フィルハーモニー管弦楽団</p>
-			<p>
-				〒910-0017<br>
-				福井県福井市文京3丁目9－1<br>
-				Gmail : fukudaiphil@gmail.com<br>
-			</p>
-		</div>　<!-- class=left -->
-		
-		<!-- SNS link on right -->
-		<div class="right">
-			<a href="https://twitter.com/fukudaiphil"><img src="Xふぃる.png" height="30px"></a>
-			<br>
-			<a href="https://www.instagram.com/fukudaiphil/"><img src="インスタふぃる.png" height="30px"></a>
-		</div> <!-- class=right -->
-	</footer>
-</div>
-<!-- ↑↑↑ common header for all pages ↑↑↑ -->
+    </div>
+  </div>
+  <!-- ===== /TOPページ: 3カラムカード ===== -->
 
 
-<!-- Javascriprt -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="menu.js"></script>
-<!-- Javascriprt　ここまで -->
+  <!-- ===== フッター ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-item">
+      <h4>福井大学フィルハーモニー管弦楽団</h4>   
+      <p>
+        〒910-0017<br>
+        福井県福井市文京3丁目9-1<br>
+        Gmail: fukudaiphil@gmail.com
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <h4>新入生向け</h4>
+      <a href="activity.html">福大フィルとは</a>
+      <a href="welcome.html">新歓情報</a>
+    </div>
+
+    <div class="footer-item">  
+      <h4>ツール</h4>
+      <a href="https://matsu-neco.github.io/pult-chart-tool/">プルト表作成ツール</a>
+    </div>
+
+    <div class="footer-item">
+      <a href="https://twitter.com/fukudaiphil">
+        <img src="Xふぃる.png" alt="X（旧Twitter） @fukudaiphil">
+      </a>
+
+      <a href="https://www.instagram.com/fukudaiphil/">
+        <img src="インスタふぃる.png" alt="Instagram @fukudaiphil">
+      </a>
+    </div>
+    </div>
+    
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+
+  <!-- JavaScript: jQueryとハンバーガーメニュー -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="menu.js"></script>
 
 </body>
 </html>
