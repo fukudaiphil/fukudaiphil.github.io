@@ -1,100 +1,89 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="design.css">
-	<meta name="robots" content="index, follow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
 
-	<meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ" />
-	
-	<title>福井大学フィルハーモニー管弦楽団</title>
+  <title>福井大学フィルハーモニー管弦楽団</title>
 
-<!-- ↓↓↓ display icon on search screen ↓↓↓ -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
-	<link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
-<!-- ↑↑↑ display icon on search screen ↑↑↑　-->
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
 
+  <link rel="stylesheet" href="design.css">
 </head>
 
-	
 <body>
-	<!-- ↓↓↓ common header for all pages ↓↓↓ -->
-	<div> 
-		<header>
-			<!-- click title to toppage -->
-			<a href="index.html"><img src="hp_title.png"></a>
-			
-			<!-- ↓↓↓ smartphone-sized navigation menu ↓↓↓ -->
-			<div class="mo_menu">
-				<!-- span menu -->
-				<div class="btn">
-					<span></span>
-				</div>	
-					
-				<nav id="mo-nav">
-					<ul>
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="overview.html">概要</a></li>
-						<li><a href="welcome.html">団員募集</a></li>
-						<li><a href="concert.html">定期演奏会</a></li>
-					</ul>
-				</nav>
-			</div> <!-- class=mo_menu -->
-			<!-- ↑↑↑　smartphone-sized navigation menu　↑↑↑ -->
-	
-			<!-- ↓↓↓　pc-sized navigation menu　↓↓↓ -->
-			<div class="pc_menu">
-				<nav>
-					<ul> 
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="overview.html">概要</a></li>
-						<li><a href="welcome.html">団員募集</a></li>
-						<li class="active"><a href="concert.html">定期演奏会</a></li>
-					</ul>
-				</nav>
-			</div> <!-- class=pc_menu -->
-			<!-- ↑↑↑ pc-sized navigation menu ↑↑↑ -->
-		</header>
-	</div> <!-- header -->
-	<!-- ↑↑↑ display icon on search screen ↑↑↑ -->
 
-	<div id="mo_pagetitle">
-		<p>過去の定期演奏会</p>
-	</div>
-	
-	<main>
+  <!-- ===== ヘッダー ===== -->
+  <header>
+    <a href="index.html">
+      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
+    </a>
 
-		<h2 class="heading">今までの定期演奏会</h2>
-			
-			<h3>第71回定期演奏会</h3>
-			<div class="pic"><img src="71.jpg" alt="第71回定期演奏会"></div>
-			<div class="text">
+    <!-- スマートフォン用メニュー -->
+    <div class="mo_menu">
+      <div class="btn" aria-label="メニューを開く" role="button">
+        <span></span>
+      </div>
+      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <!-- <li><a href="news.html">ニュース</a></li> -->
+          <li class="active"><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- PC用メニュー -->
+    <div class="pc_menu">
+      <nav aria-label="PCナビゲーション">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <!-- <li><a href="news.html">ニュース</a></li> -->
+          <li class="active"><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+   
+  <main>
+	<h2 class="heading">過去の定期演奏会</h2>		
+		<h3>第71回定期演奏会</h3>
+		<div class="pic"><img src="71.jpg" alt="第71回定期演奏会"></div>
+		<div class="text">
 			<p>指揮：木許裕介</p>
 			<p>日時：2023年12月10日 (日)</p>
 			<p>会場：ハーモニーホールふくい　大ホール</p>
 			<p>曲目：ボロディン　交響曲第2番<br>
 			　　　リスト　交響詩「レ・プレリュード」<br>
 			　　　サン＝サーンス　交響詩「死の舞踏」</p>
-			</div>
-			<br>
+		</div>
+		<br>
 
-			<h3>第70回定期演奏会</h3>
-			<div class="pic"><img src="70.jpg" alt="第70回定期演奏会"></div>
-			<div class="text">
+		<h3>第70回定期演奏会</h3>
+		<div class="pic"><img src="70.jpg" alt="第70回定期演奏会"></div>
+		<div class="text">
 			<p>指揮：木許裕介</p>
 			<p>日時：2022年12月10日 (土)</p>
 			<p>会場：ハーモニーホールふくい　大ホール</p>
 			<p>曲目：カリンニコフ　交響曲第1番<br>
 			　　　ハチャトゥリアン　組曲「仮面舞踏会」<br>
 			　　　ヨハンシュトラウス　喜歌劇「こうもり」序曲</p>
-			</div>
-			<br>
+		</div>
+		<br>
 
-			<h3>第69回定期演奏会</h3>
-			<div class="pic"><img src="69.jpg" alt="第69回定期演奏会"></div>
-			<div class="text">
+		<h3>第69回定期演奏会</h3>
+		<div class="pic"><img src="69.jpg" alt="第69回定期演奏会"></div>
+		<div class="text">
 			<p>指揮：木許裕介</p>
 			<p>ヴァイオリン：大澤愛衣子</p>
 			<p>日時：2022年1月23日 (日)</p>
@@ -102,20 +91,20 @@
 			<p>曲目：ドヴォルザーク　交響曲第8番<br>
 			　　　ブルッフ　ヴァイオリン協奏曲第一番　ト短調<br>
 			　　　山田耕筰　序曲　ニ長調</p>
-			</div>
-			<br>
+		</div>
+		<br>
 
 
-			<h3>第68回定期演奏会</h3>
-			<p>コロナの影響により中止</p>
-			<br>
+		<h3>第68回定期演奏会</h3>
+		<p>コロナの影響により中止</p>
+		<br>
 
 
-			<h3>第67回定期演奏会</h3>
-			<div class="pic"><img src="67.jpg" alt="第67回定期演奏会"></div>
-			<div class="text">
-			<p>指揮：木許裕介</p>
-			<p>ピアノ：高木祐美</p>
+		<h3>第67回定期演奏会</h3>
+		<div class="pic"><img src="67.jpg" alt="第67回定期演奏会"></div>
+		<div class="text">
+		<p>指揮：木許裕介</p>
+		<p>ピアノ：高木祐美</p>
 			<p>日時：2019年12月14日 (土)</p>
 			<p>会場：ハーモニーホールふくい　大ホール</p>
 			<p>曲目：チャイコフスキー　交響曲第5番<br>
@@ -181,32 +170,49 @@
 		</main>
 			
 
-<!-- --------フッター--------- -->
-<div>
-	<footer>
-		<div class="left">
-			<p>福井大学フィルハーモニー管弦楽団</p>
-			<p>
-				〒910-0017<br>
-				福井県福井市文京3丁目9－1<br>
-				Gmail : fukudaiphil@gmail.com
-			</p>
-		</div>
+  <!-- ===== フッター ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-item">
+      <h4>福井大学フィルハーモニー管弦楽団</h4>
+      <p>
+        〒910-0017<br>
+        福井県福井市文京3丁目9-1<br>
+        Gmail: fukudaiphil@gmail.com
+      </p>
+    </div>
 
-		<div class="right">
-			<a href="https://twitter.com/fukudaiphil"><img src="Xふぃる.png" height="30px"></a>
-			<br>
-			<a href="https://www.instagram.com/fukudaiphil/"><img src="インスタふぃる.png" height="30px"></a>
-		</div>
+    <div class="footer-item">
+      <h4>新入生向け</h4>
+      <a href="activity.html">福大フィルとは</a>
+      <a href="welcome.html">新歓情報</a>
+    </div>
 
-	</footer>
+    <div class="footer-item">  
+      <h4>ツール</h4>
+      <a href="">プルト表作成ツール</a>
+    </div>
 
-</div>
+    <div class="footer-item">
+      <a href="https://twitter.com/fukudaiphil">
+        <img src="Xふぃる.png" alt="X（旧Twitter） @fukudaiphil">
+      </a>
 
-<!-- <script src="menu.js" async></script> -->
+      <a href="https://www.instagram.com/fukudaiphil/">
+        <img src="インスタふぃる.png" alt="Instagram @fukudaiphil">
+      </a>
+    </div>
+    </div>
+    
+  </footer>
+  <!-- ===== /フッター ===== -->
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!--自作のJS-->
-<script src="menu.js"></script>
+
+  <!-- JavaScript: jQueryとハンバーガーメニュー -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="menu.js"></script>
+
 </body>
 </html>
