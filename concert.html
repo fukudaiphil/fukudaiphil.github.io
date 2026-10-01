@@ -60,18 +60,13 @@
 
   <!-- ===== メインコンテンツ ===== -->
   <main>
-    <!-- 次回演奏会 -->
     <h2 class="heading">定期演奏会のお知らせ</h2>
 
-    {% assign regular_events = site.data.events
-      | where: "type", "regular"
-      | sort: "date" %}
+    {% assign regular_events = site.data.events | where: "type", "regular" | sort: "date" %}
     {% assign upcoming_count = 0 %}
 
     {% for concert in regular_events %}
-      {% if concert.status == "announced"
-        or concert.status == "accepting"
-        or concert.status == "closed" %}
+      {% if concert.status == "announced" or concert.status == "accepting" or concert.status == "closed" %}
 
         {% include event-details.html event=concert %}
         {% assign upcoming_count = upcoming_count | plus: 1 %}
@@ -85,64 +80,11 @@
         決まり次第お知らせします。
       </p>
     {% endif %}
-   
-    <!-- 過去の演奏会 -->
-    <h2 class="heading">過去の定期演奏会</h2>
 
-    <div class="concert-entry">
-      <h3>第73回定期演奏会</h3>
-      <p>指揮：木許裕介</p>
-      <p>日時：2026年1月25日（日）  13:30開演</p>
-      <p>会場：ハーモニーホールふくい  大ホール</p>
-      <p>
-        曲目：<br>
-        ラフマニノフ / 交響曲第2番<br>
-        ボロディン / 歌劇《イーゴリ公》より〈ポロヴェッツ人の踊り〉<br>
-        J.シュトラウスⅡ / ワルツ「美しく青きドナウ」
-      </p>
-    </div>
-
-    <div class="concert-entry">
-      <h3>第72回定期演奏会  〜指揮者就任10周年記念〜</h3>
-      <p>指揮：木許裕介</p>
-      <p>日時：2025年1月18日（土）  13:30開演</p>
-      <p>会場：ハーモニーホールふくい  大ホール</p>
-      <p>
-        曲目：<br>
-        チャイコフスキー / 交響曲第5番<br>
-        シベリウス / 「カレリア」組曲<br>
-        マルケス / ダンソン No.2
-      </p>
-    </div>
-
-    <div class="concert-entry">
-      <h3>第71回定期演奏会</h3>
-      <p>指揮：木許裕介</p>
-      <p>日時：2023年12月10日（日）  13:30開演</p>
-      <p>会場：ハーモニーホールふくい  大ホール</p>
-      <p>
-        曲目：<br>
-        ボロディン / 交響曲第2番<br>
-        リスト / 交響詩「レ・プレリュード」<br>
-        サン＝サーンス / 交響詩「死の舞踏」
-      </p>
-    </div>
-
-    <div class="concert-entry">
-      <h3>第70回定期演奏会</h3>
-      <p>指揮：木許裕介</p>
-      <p>日時：2022年12月10日（土）  13:30開演</p>
-      <p>会場：ハーモニーホールふくい  大ホール</p>
-      <p>
-        曲目：<br>
-        カリンニコフ / 交響曲第1番<br>
-        ハチャトゥリアン / 組曲「仮面舞踏会」<br>
-        J.シュトラウスⅡ / 喜歌劇「こうもり」序曲
-      </p>
-    </div>
-
-    <p><a href="past_concert.html">過去の定期演奏会をもっと見る</a></p>
-
+    <h2 class="heading">過去の演奏会記録</h2>
+    <p>
+      <a href="past_concert.html">過去の定期演奏会を見る</a>
+    </p>
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
