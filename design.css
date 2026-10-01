@@ -65,7 +65,7 @@ header img {
   position: fixed;
   top: 20px;
   right: 20px;
-  display: flex;
+  display: none;
   align-items: center;
   z-index: 1000;
 }
@@ -113,7 +113,9 @@ header img {
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
+  width: min(320px, 85vw);
+  padding-top: 80px;
+  overflow-y: auto;
   height: 100%;
   background-color: var(--color-bg-content);
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
