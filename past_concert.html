@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -56,105 +58,26 @@
   <!-- ===== /ヘッダー ===== -->
    
   <main>
-	<h2 class="heading">過去の定期演奏会</h2>		
-		<h3>第71回定期演奏会</h3>
-		<div class="pic"><img src="71.jpg" alt="第71回定期演奏会"></div>
-		<div class="text">
-			<p>指揮：木許裕介</p>
-			<p>日時：2023年12月10日 (日)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：ボロディン　交響曲第2番<br>
-			　　　リスト　交響詩「レ・プレリュード」<br>
-			　　　サン＝サーンス　交響詩「死の舞踏」</p>
-		</div>
-		<br>
+    <h2 class="heading">過去の定期演奏会</h2>
 
-		<h3>第70回定期演奏会</h3>
-		<div class="pic"><img src="70.jpg" alt="第70回定期演奏会"></div>
-		<div class="text">
-			<p>指揮：木許裕介</p>
-			<p>日時：2022年12月10日 (土)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：カリンニコフ　交響曲第1番<br>
-			　　　ハチャトゥリアン　組曲「仮面舞踏会」<br>
-			　　　ヨハンシュトラウス　喜歌劇「こうもり」序曲</p>
-		</div>
-		<br>
+    {% assign regular_events = site.data.events | where: "type", "regular" | sort: "id" | reverse %}
+    {% assign archive_count = 0 %}
 
-		<h3>第69回定期演奏会</h3>
-		<div class="pic"><img src="69.jpg" alt="第69回定期演奏会"></div>
-		<div class="text">
-			<p>指揮：木許裕介</p>
-			<p>ヴァイオリン：大澤愛衣子</p>
-			<p>日時：2022年1月23日 (日)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：ドヴォルザーク　交響曲第8番<br>
-			　　　ブルッフ　ヴァイオリン協奏曲第一番　ト短調<br>
-			　　　山田耕筰　序曲　ニ長調</p>
-		</div>
-		<br>
+    {% for concert in regular_events %}
+      {% if concert.status == "finished" or concert.status == "cancelled" %}
+        {% include event-details.html event=concert %}
+        {% assign archive_count = archive_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
 
+    {% if archive_count == 0 %}
+      <p>過去の演奏会記録は準備中です。</p>
+    {% endif %}
 
-		<h3>第68回定期演奏会</h3>
-		<p>コロナの影響により中止</p>
-		<br>
+    <p><a href="concert.html">次回の定期演奏会を見る</a></p>
 
-
-		<h3>第67回定期演奏会</h3>
-		<div class="pic"><img src="67.jpg" alt="第67回定期演奏会"></div>
-		<div class="text">
-		<p>指揮：木許裕介</p>
-		<p>ピアノ：高木祐美</p>
-			<p>日時：2019年12月14日 (土)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：チャイコフスキー　交響曲第5番<br>
-			　　　ラフマニノフ　ピアノ協奏曲第2番<br>
-			　　　バラキレフ　3つのロシアの主題による序曲　第1番</p>
-			</div>
-			<br>
-
-<!-- 			<h3>第65回定期演奏会</h3>
-			<div class="pic"><img src="65.jpg"></div>
-			<div class="text">
-			<p>指揮：木許裕介</p>
-			<p>日時：2017年12月17日 (土)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：シベリウス　交響曲第1番　ホ短調<br>
-			　　　マスネ　組曲第4番「絵のような風景」<br>
-			　　　サン＝サーンス　英雄行進曲</p>
-			</div>
-			<br>
-
-			<h3>第62回定期演奏会</h3>
-			<div class="pic"><img src="62.jpg"></div>
-			<div class="text">
-			<p>指揮：田尻真高</p>
-			<p>グラシアー・トリオ<br>
-				　ヴァイオリン：<br>
-				　ピアノ：グローリア・シー<br>
-			　チェロ：</p>
-			<p>日時：2014年12月7日 (日)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：チャイコフスキー　交響曲第3番「ポーランド」<br>
-			　　　サン＝サーンス　ピアノ協奏曲第2番<br>
-			　　　ウェーバー　歌劇「魔弾の射手」序曲</p>
-			</div>
-			<br>
-
-
-			<h3>第61回定期演奏会</h3>
-			<div class="pic"><img src="61.jpg"></div>
-			<div class="text">
-			<p>指揮：田尻真高</p>
-			<p>ピアノ：仲谷理沙</p>
-			<p>日時：2013年12月22日 (日)</p>
-			<p>会場：ハーモニーホールふくい　大ホール</p>
-			<p>曲目：チャイコフスキー　交響曲第3番「ポーランド」<br>
-			　　　サン＝サーンス　ピアノ協奏曲第2番<br>
-			　　　ウェーバー　歌劇「魔弾の射手」序曲</p>
-			</div>
-			<br>
-
+    <!-- 旧ページの非表示記録を保存。内容確認後にデータへ移行します。 -->
+    <!-- 
 			<h3>第48回定期演奏会</h3>
 			<div class="pic"><img src="48.jpg"></div>
 			<div class="text">
@@ -167,7 +90,7 @@
 			　　　ベートーヴェン　「命名祝日」序曲</p>
 			</div>
 			<br> -->
-		</main>
+  </main>
 			
 
   <!-- ===== フッター ===== -->
@@ -216,3 +139,4 @@
 
 </body>
 </html>
+
