@@ -1,4 +1,7 @@
+---
+---
 <!DOCTYPE html>
+<html lang="ja"><!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -58,27 +61,32 @@
 
   <!-- ===== メインコンテンツ ===== -->
   <main>
-
     <!-- 次回演奏会 -->
     <h2 class="heading">定期演奏会のお知らせ</h2>
 
-    <div class="concert-entry">
-      <h3></h3>
-      <!-- <img src="第74回定演チラシ.jpg" alt="第74回定期演奏会チラシ" class="concert-flyer"> -->
-      <!-- <p>指揮：木許裕介</p> -->
-      <!-- <p>日時：2026年12月20日（日）  13:30開演</p> -->
-      <p>会場：ハーモニーホールふくい  大ホール</p>
-      <p>
-        曲目：<br>
-        
-      </p>
-      <!-- <p>
-        広告協賛：<a href="https://www.emori.co.jp/">興和江守</a>様をはじめとする
-        多くの企業・団体様に多大なるご協賛を賜り、心より御礼申し上げます。
-      </p> -->
-      <p>オンラインでのチケット購入は<a href="">こちら</a></p>
-    </div>
+    {% assign regular_events = site.data.events
+      | where: "type", "regular"
+      | sort: "date" %}
+    {% assign upcoming_count = 0 %}
 
+    {% for concert in regular_events %}
+      {% if concert.status == "announced"
+        or concert.status == "accepting"
+        or concert.status == "closed" %}
+
+        {% include event-details.html event=concert %}
+        {% assign upcoming_count = upcoming_count | plus: 1 %}
+
+      {% endif %}
+    {% endfor %}
+
+    {% if upcoming_count == 0 %}
+      <p>
+        次回の定期演奏会については、
+        決まり次第お知らせします。
+      </p>
+    {% endif %}
+   
     <!-- 過去の演奏会 -->
     <h2 class="heading">過去の定期演奏会</h2>
 
