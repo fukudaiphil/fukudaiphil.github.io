@@ -5,133 +5,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
 
-  <title>福井大学フィルハーモニー管弦楽団</title>
+  <title>演奏会情報｜福井大学フィルハーモニー管弦楽団</title>
 
-  <!-- ファビコン -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
-
-  <link rel="stylesheet" href="design.css">
+  <meta http-equiv="refresh" content="0; url=index.html">
+  <link rel="canonical" href="{{ '/index.html' | absolute_url }}">
 </head>
 
 <body>
-
-  <!-- ===== ヘッダー ===== -->
-  <header>
-    <a href="index.html">
-      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
-    </a>
-
-    <!-- スマートフォン用メニュー -->
-    <div class="mo_menu">
-      <div class="btn" aria-label="メニューを開く" role="button">
-        <span></span>
-      </div>
-      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
-        <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li class="active"><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- PC用メニュー -->
-    <div class="pc_menu">
-      <nav aria-label="PCナビゲーション">
-        <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li class="active"><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- ===== /ヘッダー ===== -->
-
-
-  <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <h2 class="heading">定期演奏会のお知らせ</h2>
-
-    {% assign regular_events = site.data.events | where: "type", "regular" | sort: "date" %}
-    {% assign upcoming_count = 0 %}
-
-    {% for concert in regular_events %}
-      {% if concert.status == "announced" or concert.status == "accepting" or concert.status == "closed" %}
-
-        {% include event-details.html event=concert %}
-        {% assign upcoming_count = upcoming_count | plus: 1 %}
-
-      {% endif %}
-    {% endfor %}
-
-    {% if upcoming_count == 0 %}
-      <p>
-        次回の定期演奏会については、
-        決まり次第お知らせします。
-      </p>
-    {% endif %}
-
-    <h2 class="heading">過去の演奏会記録</h2>
-    <p>
-      <a href="past_concert.html">過去の定期演奏会を見る</a>
-    </p>
-  </main>
-  <!-- ===== /メインコンテンツ ===== -->
-
-
-  <!-- ===== フッター ===== -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-item">
-      <h4>福井大学フィルハーモニー管弦楽団</h4>
-      <p>
-        〒910-0017<br>
-        福井県福井市文京3丁目9-1<br>
-        Gmail: fukudaiphil@gmail.com
-      </p>
-    </div>
-
-    <div class="footer-item">
-      <h4>新入生向け</h4>
-      <a href="activity.html">福大フィルとは</a>
-      <a href="welcome.html">新歓情報</a>
-    </div>
-
-    <div class="footer-item">  
-      <h4>ツール</h4>
-      <a href="">プルト表作成ツール</a>
-    </div>
-
-    <div class="footer-item">
-      <a href="https://twitter.com/fukudaiphil">
-        <img src="Xふぃる.png" alt="X（旧Twitter） @fukudaiphil">
-      </a>
-
-      <a href="https://www.instagram.com/fukudaiphil/">
-        <img src="インスタふぃる.png" alt="Instagram @fukudaiphil">
-      </a>
-    </div>
-    </div>
-    
-  </footer>
-  <!-- ===== /フッター ===== -->
-
-
-  <!-- JavaScript: jQueryとハンバーガーメニュー -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-  <script src="menu.js"></script>
-
+  <p>
+    演奏会情報はHOMEに掲載しています。
+    <a href="index.html">HOMEへ移動する</a>
+  </p>
+  <p>
+    <a href="past_concert.html">過去の定期演奏会を見る</a>
+  </p>
 </body>
 </html>
