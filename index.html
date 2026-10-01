@@ -1,108 +1,39 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
+      <!-- 開催予定の演奏会 -->
+      {% assign sorted_events = site.data.events | sort: "date" %}
+      {% assign upcoming_count = 0 %}
 
-  <title>福井大学フィルハーモニー管弦楽団</title>
+      {% for concert in sorted_events %}
+        {% if concert.status == "announced"
+          or concert.status == "accepting"
+          or concert.status == "closed" %}
 
-  <!-- ファビコン -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon-180×180.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="android-chrome-192×192.png" sizes="192x192">
+          <div class="card">
+            {% if concert.type == "regular" %}
+              <h2 class="heading">
+                <a href="concert.html">定期演奏会のお知らせ</a>
+              </h2>
+            {% else %}
+              <h2 class="heading">その他演奏会のお知らせ</h2>
+            {% endif %}
 
-  <link rel="stylesheet" href="design.css">
-</head>
+            {% include event-details.html event=concert %}
+          </div>
 
-<body>
+          {% assign upcoming_count = upcoming_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
 
-  <!-- ===== ヘッダー ===== -->
-  <header>
-    <a href="index.html">
-      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
-    </a>
-
-    <!-- スマートフォン用メニュー -->
-    <div class="mo_menu">
-      <div class="btn" aria-label="メニューを開く" role="button">
-        <span></span>
-      </div>
-      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
-        <ul>
-          <li class="active"><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- PC用メニュー -->
-    <div class="pc_menu">
-      <nav aria-label="PCナビゲーション">
-        <ul>
-          <li class="active"><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- ===== /ヘッダー ===== -->
-
-
-  <!-- ===== TOPページ: 概要帯 ===== -->
-  <div class="top-overview">
-    <h3>福井大学フィルハーモニー管弦楽団とは</h3>
-    <p>
-      福井最古のオーケストラとして70回を超える定期演奏会を開催してきました。<br>
-      県内小中学校へ巡回演奏をしたり，地域のお祭りで演奏をするなど地域に根ざした活動をしています。<br>
-      福井大学生をはじめとし，福井大学院生や他大学の学生も活躍しています。<br>
-    </p>
-
-    <!-- <img src="overview.png" alt="活動の様子"> -->
-  </div>
-  <!-- ===== /TOPページ: 概要帯 ===== -->
-
-
-  <!-- ===== TOPページ: 3カラムカード ===== -->
-  <div class="top-bg">
-    <div class="top-cards">
-
-      <!-- カード1: お知らせ -->
-      <div class="card">
-        <h2 class="heading">定期演奏会のお知らせ</h2>
-        <h3><a href="concert.html">第74回定期演奏会</a></h3>
-        <p>指揮：木許裕介</p>
-        <p>日時：2026年12月20日（日）  13:30開演</p>
-        <p>会場：ハーモニーホールふくい  大ホール</p>
-        <p>
-          曲目：<br>
-          ブラームス／交響曲第2番 ニ長調 Op.73<br>
-          チャイコフスキー／バレエ組曲「くるみ割り人形」<br>
-          シベリウス／交響詩「フィンランディア」<br>
-        </p>
-        <!-- <p>
-          広告協賛：<a href="https://www.emori.co.jp/">興和江守</a>様をはじめとする
-          多くの企業・団体様に多大なるご協賛を賜り、心より御礼申し上げます。
-        </p> -->
-      </div>
-      
-      <div class="card">
-        <h2 class="heading">その他演奏会のお知らせ</h2>
-        <h3>第1回OB・OG合同演奏会</h3> 
-        <p>日時：2026年</p>
-        <p>会場：</p>
-        <p>曲目：</p>
-        <p>現役団員と卒業生の交流を目的に年に一度の演奏会を開催します。<br>
-        参加登録は<a href="">こちら</a></p>
-      </div>
-
+      {% if upcoming_count == 0 %}
+        <div class="card">
+          <h2 class="heading">演奏会のお知らせ</h2>
+          <p>今後の演奏会については、決まり次第お知らせします。</p>
+        </div>
+      {% endif %}
       <div class="card">
         <h2 class="heading">ご支援</h2>
         <p>
