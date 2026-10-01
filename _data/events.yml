@@ -1,0 +1,65 @@
+# 演奏会情報の記入ファイル
+#
+# 新しい演奏会は、1件分をコピーして追加します。
+# 行の先頭の空白や「-」「:」はそのまま残してください。
+# 日付・時刻・文章は、半角の " " の中に記入します。
+#
+# type:
+#   regular = 定期演奏会
+#   obog    = OB・OG演奏会
+#   other   = その他の演奏会
+#
+# status:
+#   preparing = 準備中
+#   announced = 告知中
+#   accepting = チケット販売・参加受付中
+#   closed    = 販売・参加受付終了
+#   finished  = 開催終了
+#   cancelled = 中止
+#
+# 空欄は "" のままにします。
+# URLや画像が空欄の場合、ボタンや画像を表示しない設計にします。
+
+- id: "concert-074"
+  type: "regular"
+  title: "第74回定期演奏会"
+  status: "announced"
+  date: "2026-12-20"
+  open_time: "13:00"
+  start_time: "13:30"
+  venue: "ハーモニーホールふくい 大ホール"
+  conductor: "木許裕介"
+
+  program:
+    - "ブラームス／交響曲第2番 ニ長調 Op.73"
+    - "チャイコフスキー／バレエ組曲「くるみ割り人形」"
+    - "シベリウス／交響詩「フィンランディア」"
+
+  admission: ""
+  ticket_url: ""
+  registration_url: ""
+  flyer: ""
+  note: ""
+  report: ""
+
+- id: "concert-073"
+  type: "regular"
+  title: "第73回定期演奏会"
+  status: "finished"
+  date: "2026-01-25"
+  open_time: "13:00"
+  start_time: "13:30"
+  venue: "ハーモニーホールふくい 大ホール"
+  conductor: "木許裕介"
+
+  program:
+    - "ラフマニノフ／交響曲第2番"
+    - "ボロディン／歌劇《イーゴリ公》より〈ポロヴェッツ人の踊り〉"
+    - "J.シュトラウスⅡ／ワルツ「美しく青きドナウ」"
+
+  admission: ""
+  ticket_url: ""
+  registration_url: ""
+  flyer: ""
+  note: ""
+  report: ""
