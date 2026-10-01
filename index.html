@@ -23,38 +23,7 @@
 <body>
 
   <!-- ヘッダー -->
-  <header>
-    <a href="index.html">
-      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
-    </a>
-
-    <!-- スマートフォン用メニュー -->
-    <div class="mo_menu">
-      <div class="btn" aria-label="メニューを開く" role="button">
-        <span></span>
-      </div>
-      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
-        <ul>
-          <li class="active"><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <li><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- PC用メニュー -->
-    <div class="pc_menu">
-      <nav aria-label="PCナビゲーション">
-        <ul>
-          <li class="active"><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <li><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <!-- 団の紹介 -->
   <div class="top-overview">
@@ -79,9 +48,7 @@
 
           <div class="card">
             {% if concert.type == "regular" %}
-              <h2 class="heading">
-                <a href="concert.html">定期演奏会のお知らせ</a>
-              </h2>
+              <h2 class="heading">定期演奏会のお知らせ</h2>
             {% else %}
               <h2 class="heading">その他演奏会のお知らせ</h2>
             {% endif %}
@@ -137,7 +104,7 @@
 
       <div class="footer-item">
         <h4>新入生向け</h4>
-        <a href="activity.html">福大フィルとは</a>
+        <a href="about.html">団の紹介</a>
         <a href="welcome.html">新歓情報</a>
       </div>
 
@@ -168,3 +135,4 @@
 
 </body>
 </html>
+
