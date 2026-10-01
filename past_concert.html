@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
 
-  <title>福井大学フィルハーモニー管弦楽団</title>
+  <title>過去の定期演奏会｜福井大学フィルハーモニー管弦楽団</title>
 
   <!-- ファビコン -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -21,40 +21,7 @@
 <body>
 
   <!-- ===== ヘッダー ===== -->
-  <header>
-    <a href="index.html">
-      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
-    </a>
-
-    <!-- スマートフォン用メニュー -->
-    <div class="mo_menu">
-      <div class="btn" aria-label="メニューを開く" role="button">
-        <span></span>
-      </div>
-      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
-        <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li class="active"><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- PC用メニュー -->
-    <div class="pc_menu">
-      <nav aria-label="PCナビゲーション">
-        <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li><a href="activity.html">活動内容</a></li>
-          <li><a href="welcome.html">新歓情報</a></li>
-          <!-- <li><a href="news.html">ニュース</a></li> -->
-          <li class="active"><a href="concert.html">定期演奏会</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
   <!-- ===== /ヘッダー ===== -->
    
   <main>
@@ -74,7 +41,7 @@
       <p>過去の演奏会記録は準備中です。</p>
     {% endif %}
 
-    <p><a href="concert.html">次回の定期演奏会を見る</a></p>
+    <p><a href="index.html">開催予定の演奏会を見る（HOME）</a></p>
 
     <!-- 旧ページの非表示記録を保存。内容確認後にデータへ移行します。 -->
     <!-- 
@@ -107,7 +74,7 @@
 
     <div class="footer-item">
       <h4>新入生向け</h4>
-      <a href="activity.html">福大フィルとは</a>
+      <a href="about.html">団の紹介</a>
       <a href="welcome.html">新歓情報</a>
     </div>
 
@@ -139,4 +106,5 @@
 
 </body>
 </html>
+
 
