@@ -3,14 +3,79 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification"
+        content="GHJ2paTq9e9p5-O6GC_pxQf05GdQsxW7s3J6pRzLHNQ">
+
+  <title>福井大学フィルハーモニー管弦楽団</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon"
+        href="apple-touch-icon-180×180.png" sizes="180x180">
+  <link rel="icon" type="image/png"
+        href="android-chrome-192×192.png" sizes="192x192">
+
+  <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <a href="index.html">
+      <img src="hp_title.png" alt="福井大学フィルハーモニー管弦楽団">
+    </a>
+
+    <!-- スマートフォン用メニュー -->
+    <div class="mo_menu">
+      <div class="btn" aria-label="メニューを開く" role="button">
+        <span></span>
+      </div>
+      <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
+        <ul>
+          <li class="active"><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <li><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- PC用メニュー -->
+    <div class="pc_menu">
+      <nav aria-label="PCナビゲーション">
+        <ul>
+          <li class="active"><a href="index.html">トップ</a></li>
+          <li><a href="activity.html">活動内容</a></li>
+          <li><a href="welcome.html">新歓情報</a></li>
+          <li><a href="concert.html">定期演奏会</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 団の紹介 -->
+  <div class="top-overview">
+    <h3>福井大学フィルハーモニー管弦楽団とは</h3>
+    <p>
+      福井最古のオーケストラとして70回を超える定期演奏会を開催してきました。<br>
+      県内小中学校へ巡回演奏をしたり、地域のお祭りで演奏をするなど地域に根ざした活動をしています。<br>
+      福井大学生をはじめとし、福井大学院生や他大学の学生も活躍しています。
+    </p>
+  </div>
+
+  <!-- 演奏会とご支援の案内 -->
+  <div class="top-bg">
+    <div class="top-cards">
+
       <!-- 開催予定の演奏会 -->
       {% assign sorted_events = site.data.events | sort: "date" %}
       {% assign upcoming_count = 0 %}
 
       {% for concert in sorted_events %}
-        {% if concert.status == "announced"
-          or concert.status == "accepting"
-          or concert.status == "closed" %}
+        {% if concert.status == "announced" or concert.status == "accepting" or concert.status == "closed" %}
 
           <div class="card">
             {% if concert.type == "regular" %}
@@ -34,63 +99,68 @@
           <p>今後の演奏会については、決まり次第お知らせします。</p>
         </div>
       {% endif %}
+
+      <!-- ご支援 -->
       <div class="card">
         <h2 class="heading">ご支援</h2>
         <p>
-          <a href="https://www.u-fukui.ac.jp/kikin/">福井大学基金</a>を通じてサークルへご寄附いただけます。
+          <a href="https://www.u-fukui.ac.jp/kikin/">福井大学基金</a>
+          を通じてサークルへご寄附いただけます。
           メリットとして税制上の優遇措置等があります。
         </p>
         <p>
-          ご寄附の方法は<a href="https://www.u-fukui.ac.jp/kikin/lk04/">こちら</a>をご確認ください。<br>
-          なお、ご寄附の際は「③卓越高度専門職業人育成：研究支援事業」をお選びいただき、
-          通信欄やメッセージ欄で「フィルハーモニー管弦楽団」へのご寄附とご指定ください。
+          ご寄附の方法は
+          <a href="https://www.u-fukui.ac.jp/kikin/lk04/">こちら</a>
+          をご確認ください。<br>
+          なお、ご寄附の際は
+          「③卓越高度専門職業人育成：研究支援事業」をお選びいただき、
+          通信欄やメッセージ欄で
+          「フィルハーモニー管弦楽団」へのご寄附とご指定ください。
         </p>
       </div>
 
     </div>
   </div>
-  <!-- ===== /TOPページ: 3カラムカード ===== -->
 
-
-  <!-- ===== フッター ===== -->
+  <!-- フッター -->
   <footer>
     <div class="footer-container">
+
       <div class="footer-item">
-      <h4>福井大学フィルハーモニー管弦楽団</h4>   
-      <p>
-        〒910-0017<br>
-        福井県福井市文京3丁目9-1<br>
-        Gmail: fukudaiphil@gmail.com
-      </p>
-    </div>
+        <h4>福井大学フィルハーモニー管弦楽団</h4>
+        <p>
+          〒910-0017<br>
+          福井県福井市文京3丁目9-1<br>
+          Gmail: fukudaiphil@gmail.com
+        </p>
+      </div>
 
-    <div class="footer-item">
-      <h4>新入生向け</h4>
-      <a href="activity.html">福大フィルとは</a>
-      <a href="welcome.html">新歓情報</a>
-    </div>
+      <div class="footer-item">
+        <h4>新入生向け</h4>
+        <a href="activity.html">福大フィルとは</a>
+        <a href="welcome.html">新歓情報</a>
+      </div>
 
-    <div class="footer-item">  
-      <h4>ツール</h4>
-      <a href="https://matsu-neco.github.io/pult-chart-tool/">プルト表作成ツール</a>
-    </div>
+      <div class="footer-item">
+        <h4>ツール</h4>
+        <a href="https://matsu-neco.github.io/pult-chart-tool/">
+          プルト表作成ツール
+        </a>
+      </div>
 
-    <div class="footer-item">
-      <a href="https://twitter.com/fukudaiphil">
-        <img src="Xふぃる.png" alt="X（旧Twitter） @fukudaiphil">
-      </a>
+      <div class="footer-item">
+        <a href="https://twitter.com/fukudaiphil">
+          <img src="Xふぃる.png" alt="X（旧Twitter） @fukudaiphil">
+        </a>
+        <a href="https://www.instagram.com/fukudaiphil/">
+          <img src="インスタふぃる.png" alt="Instagram @fukudaiphil">
+        </a>
+      </div>
 
-      <a href="https://www.instagram.com/fukudaiphil/">
-        <img src="インスタふぃる.png" alt="Instagram @fukudaiphil">
-      </a>
     </div>
-    </div>
-    
   </footer>
-  <!-- ===== /フッター ===== -->
 
-
-  <!-- JavaScript: jQueryとハンバーガーメニュー -->
+  <!-- メニューの動作 -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
