@@ -1,0 +1,47 @@
+{% capture header_navigation %}
+  <li{% if page.url == "/" or page.url == "/index.html" %} class="active"{% endif %}>
+    <a href="{{ '/index.html' | relative_url }}">HOME</a>
+  </li>
+  <li{% if page.url == "/about.html" %} class="active"{% endif %}>
+    <a href="{{ '/about.html' | relative_url }}">団の紹介</a>
+  </li>
+  <li{% if page.url == "/welcome.html" %} class="active"{% endif %}>
+    <a href="{{ '/welcome.html' | relative_url }}">新歓情報</a>
+  </li>
+  <li{% if page.url == "/news.html" %} class="active"{% endif %}>
+    <a href="{{ '/news.html' | relative_url }}">ニュース</a>
+  </li>
+  <li{% if page.url == "/past_concert.html" %} class="active"{% endif %}>
+    <a href="{{ '/past_concert.html' | relative_url }}">過去の定期演奏会</a>
+  </li>
+{% endcapture %}
+
+<header>
+  <a href="{{ '/index.html' | relative_url }}">
+    <img
+      src="{{ '/assets/images/common/site-logo.png' | relative_url }}"
+      alt="福井大学フィルハーモニー管弦楽団">
+  </a>
+
+  <!-- スマートフォン用メニュー -->
+  <div class="mo_menu">
+    <div class="btn" aria-label="メニューを開く"
+         aria-expanded="false" role="button">
+      <span></span>
+    </div>
+    <nav id="mo-nav" aria-label="スマートフォン用ナビゲーション">
+      <ul>
+        {{ header_navigation }}
+      </ul>
+    </nav>
+  </div>
+
+  <!-- PC用メニュー -->
+  <div class="pc_menu">
+    <nav aria-label="PCナビゲーション">
+      <ul>
+        {{ header_navigation }}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,2 +1,7 @@
+title: "福井大学フィルハーモニー管弦楽団"
+url: "https://fukudaiphil.github.io"
+baseurl: ""
+lang: "ja"
+
 plugins:
   - jekyll-sitemap
