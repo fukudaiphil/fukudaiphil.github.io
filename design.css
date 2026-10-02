@@ -539,11 +539,13 @@ footer {
 
 .concert-entry:last-of-type { border-bottom: none; }
 
-.concert-flyer {
-  height: 300px;
-  width: auto;
+main .concert-flyer,
+.card .concert-flyer {
   display: block;
-  margin: 12px 0;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 12px auto 20px;
 }
 
 
