@@ -60,7 +60,7 @@
   admission: ""
   ticket_url: ""
   registration_url: ""
-  flyer: ""
+  flyer: "/assets/images/concerts/concert-073.jpg"
   note: ""
   report: ""
 
@@ -80,7 +80,7 @@
   admission: ""
   ticket_url: ""
   registration_url: ""
-  flyer: ""
+  flyer: "/assets/images/concerts/concert-072.jpg"
   note: ""
   report: ""
 
