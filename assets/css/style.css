@@ -1,77 +1,251 @@
 /* =============================================================
-   福井大学フィルハーモニー管弦楽団 — スタイルシート
+   福井大学フィルハーモニー管弦楽団：共通CSS
+   GitHubでの保存先：assets/css/style.css
+
+   【探す順番】
+   1 共通設定 → 2 基本設定 → 3 共通部品 → 4 ヘッダー
+   → 5 ページ別 → 6 フッター → 7 スマートフォン向け
+
+   【更新するとき】
+   ・色や文字サイズは「1 共通設定」を変更する。
+   ・文章や演奏会情報はHTMLや_data内で変更する。
+   ・.名前はHTMLのclass、#名前はHTMLのidに対応する。
+   ・marginは外側、paddingは内側の余白。pxは大きさの単位。
+   ・var(--名前)は共通設定の値を読み込む。
+   ・同じ対象では、指定が詳しい設定が優先される。
+     指定の詳しさが同じなら、後に書いた設定が優先される。
+   ・各ルールは、おおむね配置→大きさ→余白→文字→色・枠の順。
+   ・同じ設定を末尾へ追加し続けず、既存の該当箇所を修正する。
+   ・768pxのメニュー切り替え境界はassets/js/menu.jsとそろえる。
    ============================================================= */
 
 
-/* ===== カラーパレット（ここだけ変えれば全体に反映） ===== */
+/* ===== 1 共通設定：色5種類・文字サイズ4種類 ===== */
 :root {
-  --color-main:       #325675;  /* メイン青：ヘッダー・見出し・フッターなど */
-  --color-accent:     #cda04f;  /* アクセント金：h3・リンク・アクティブメニューなど */
-  --color-bg-page:    #7793ab;  /* ページ背景 */
-  --color-bg-content: #ffffff;  /* コンテンツ背景（main・header） */
-  --color-text-body:  #333333;  /* 本文テキスト */
-  --color-border-nav: #cccccc;  /* ナビ区切り線 */
-  --color-border-faq: #cda04f;  /* FAQ左ボーダー（アクセントと統一） */
+  /* 色：白い背景と薄い灰色の区切り線は、各箇所に固定値で書く。 */
+  --color-main: #325675;        /* メインの青：見出し・ヘッダー・フッター */
+  --color-accent: #cda04f;      /* 装飾の金：線・強調・暗い背景の見出し */
+  --color-bg-page: #7793ab;     /* ページ外側の背景 */
+  --color-text-body: #333333;   /* 本文の文字 */
+  --color-link: #785916;        /* 白背景のリンク・小見出し用の濃い金 */
 
-  /* ===== フォントサイズ基準（ここで一括調整） ===== */
-  --fs-base:   16px;   /* 本文 */
-  --fs-small:  15px;   /* カード本文・フッター */
-  --fs-h2:     22px;   /* セクション見出し */
-  --fs-h3:     18px;   /* サブ見出し */
-  --fs-h4:     15px;   /* フッター見出し */
-  --fs-nav:    18px;   /* ナビゲーション */
+  /* 文字サイズ：場所ではなく役割で選ぶ。 */
+  --fs-title: 28px;            /* ページ名 */
+  --fs-heading: 22px;          /* ページ内の区分 */
+  --fs-subtitle: 18px;         /* 演奏会名・記事名・項目名 */
+  --fs-body: 16px;             /* 本文・メニュー・フッター */
 }
 
 
-/* ===== リセット ===== */
+/* ===== 2 基本設定：余白の初期化・本文・リンク ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-/* ===== ベース ===== */
 body {
+  width: 100%;
   font-family: Arial, sans-serif;
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
+  color: var(--color-text-body);
   background-color: var(--color-bg-page);
-  width: 100%;
+}
+
+/* キーボードでリンクやボタンを選択したとき、選択位置を見えるようにする。 */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 
-/* ===== ヘッダー ===== */
-header {
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background-color: var(--color-bg-content);
-}
-
-header a {
-  color: #000000;
-  text-decoration: none;
-}
-
-header img {
-  max-width: 600px;
+main {
   width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  overflow-wrap: anywhere;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main img {
+  display: block;
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+main h2.heading {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: var(--fs-heading);
+  color: var(--color-main);
+  border-left: 3px solid var(--color-main);
+}
+
+main h3 {
+  margin-bottom: 10px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-link);
+}
+
+main p {
+  margin-bottom: 20px;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+main a {
+  text-decoration: underline;
+  color: var(--color-link);
+  transition: color 0.3s;
+}
+
+main a:hover {
+  color: var(--color-main);
+}
+
+
+
+/* ===== 3 共通部品：タイトル・画像・演奏会表示 ===== */
+/* ページ名：class="page-title"を使う。
+   現在のHTMLでも動くよう、mainの最初のh2.headingも対象にする。 */
+
+.page-title,
+main > h2.heading:first-child {
+  margin-bottom: 24px;
+  padding-left: 0;
+  font-size: var(--fs-title);
+  color: var(--color-main);
+  border-left: none;
+}
+
+/* 新しい区分・項目を追加する場合の共通クラス。既存のheadingも引き続き使える。 */
+
+.section-title {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: var(--fs-heading);
+  color: var(--color-main);
+  border-left: 3px solid var(--color-main);
+}
+
+.item-title {
+  margin-bottom: 10px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-link);
+}
+
+/* 地図などの共通画像 */
+
+.pic {
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.pic img {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
+/* HOMEと過去一覧で共用する演奏会1件の表示 */
 
-/* ===== スマートフォン用ハンバーガーメニュー ===== */
+.concert-entry {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.concert-entry:last-of-type {
+  border-bottom: none;
+}
+
+main .concert-flyer,
+.card .concert-flyer {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 12px auto 20px;
+}
+
+
+/* ===== 4 ヘッダー・メニュー：_includes/header.html ===== */
+header {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+header a {
+  text-decoration: none;
+  color: #000000;
+}
+
+header img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* PCメニュー */
+
+.pc_menu nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pc_menu nav ul li {
+  margin: 0 15px;
+}
+
+.pc_menu nav ul li a {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: var(--fs-body);
+  text-decoration: none;
+  color: #000000;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.pc_menu nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+.pc_menu nav ul li.active a {
+  color: #ffffff;
+  background-color: var(--color-main);
+}
+
+/* スマートフォン用メニュー。開閉はmenu.js。 */
+
 .mo_menu {
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 1000;
   display: none;
   align-items: center;
-  z-index: 1000;
 }
 
 .mo_menu .btn {
   cursor: pointer;
+  font: inherit;
+  background-color: #ffffff;
+  z-index: 1001;
+  /* 開いたメニューより前面に置き、同じボタンで閉じられるようにする */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,387 +259,348 @@ header img {
 }
 
 .mo_menu .btn span {
+  position: relative;
   display: block;
   width: 25px;
   height: 3px;
   margin: 4px 0;
   background-color: var(--color-main);
-  position: relative;
 }
 
 .mo_menu .btn span::before,
 .mo_menu .btn span::after {
-  content: "";
   position: absolute;
   left: 0;
   width: 25px;
   height: 3px;
   background-color: var(--color-main);
+  content: "";
   transition: transform 0.3s ease;
 }
 
-.mo_menu .btn span::before { top: -8px; }
-.mo_menu .btn span::after  { top:  8px; }
+.mo_menu .btn span::before {
+  top: -8px;
+}
+
+.mo_menu .btn span::after {
+  top: 8px;
+}
 
 /* ドロワーメニュー */
+
 #mo-nav {
-  display: none;
   position: fixed;
   top: 0;
   right: 0;
-  width: min(320px, 85vw);
-  padding-top: 80px;
-  overflow-y: auto;
-  height: 100%;
-  background-color: var(--color-bg-content);
-  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  display: none;
+  width: min(320px, 85vw);
+  height: 100%;
+  padding-top: 80px;
+  background-color: #ffffff;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-#mo-nav ul { list-style: none; }
+#mo-nav ul {
+  list-style: none;
+}
 
 #mo-nav ul li {
   text-align: center;
-  border-bottom: 1px solid var(--color-border-nav);
+  border-bottom: 1px solid #cccccc;
 }
 
 #mo-nav ul li a {
   display: block;
   width: 100%;
   padding: 20px;
-  color: #000;
-  font-size: var(--fs-nav);
+  font-size: var(--fs-body);
   text-decoration: none;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  color: #000;
+  overflow: hidden;
 }
 
-#mo-nav ul li a:hover  { background-color: var(--color-accent); }
-#mo-nav ul li.active a { background-color: var(--color-bg-page); color: #ffffff; }
-
-
-/* ===== PC用ナビゲーション ===== */
-.pc_menu nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+#mo-nav ul li a:hover {
+  background-color: var(--color-accent);
 }
 
-.pc_menu nav ul li { margin: 0 15px; }
-
-.pc_menu nav ul li a {
-  display: inline-block;
-  padding: 10px 15px;
-  color: #000000;
-  font-size: var(--fs-nav);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: color 0.3s, background-color 0.3s;
+#mo-nav ul li.active a {
+  color: #ffffff;
+  background-color: var(--color-bg-page);
 }
 
-.pc_menu nav ul li a:hover  { color: var(--color-accent); }
-.pc_menu nav ul li.active a { color: #ffffff; background-color: var(--color-accent); }
 
+/* ===== 5 ページ別：HOME → 団紹介 → 新歓 → 過去一覧 → ニュース ===== */
+/* HOME：団紹介の帯 */
 
-/* ===== TOPページ: 概要帯（端まで背景色） ===== */
 .top-overview {
-  background-color: var(--color-main);
   width: 100%;
   padding: 28px 40px;
   text-align: center;
+  background-color: var(--color-main);
 }
 
 .top-overview h3 {
-  font-size: var(--fs-h3);
-  color: var(--color-accent);
   margin-bottom: 10px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-accent);
 }
 
 .top-overview p {
-  font-size: var(--fs-base);
-  color: var(--color-bg-content);
+  font-size: var(--fs-body);
   line-height: 1.7;
+  color: #ffffff;
 }
 
 .top-overview img {
   display: block;
-  max-width: 800px;
   width: 90%;
+  max-width: 800px;
   height: auto;
   margin: 20px auto 0;
 }
 
+/* HOME：開催予定の演奏会とご支援のカード */
 
-/* ===== TOPページ: 3カラムカード ===== */
+/* カードを最低300px程度で並べ、収まらなければ自動で次の行へ。
+   狭い画面では画面幅を優先し、横にはみ出さないようにする。 */
+
 .top-bg {
-  background-color: var(--color-bg-page);
   padding: 40px 20px;
+  background-color: var(--color-bg-page);
 }
 
 .top-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 24px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .card {
-  background-color: var(--color-bg-content);
-  border-radius: 16px;
+  min-width: 0;
   padding: 24px;
   overflow-wrap: break-word;
-  word-break: break-all;
+  overflow-wrap: anywhere;
+  background-color: #ffffff;
+  border-radius: 16px;
 }
 
 .card h2.heading {
-  font-size: var(--fs-h2);
-  color: var(--color-main);
   margin-bottom: 16px;
-  border-left: 3px solid var(--color-main);
   padding-left: 10px;
+  font-size: var(--fs-heading);
+  color: var(--color-main);
+  border-left: 3px solid var(--color-main);
 }
 
 .card h3 {
-  font-size: var(--fs-h3);
-  color: var(--color-accent);
   margin-bottom: 10px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-link);
 }
 
 .card p {
-  font-size: var(--fs-small);
-  color: var(--color-text-body);
-  line-height: 1.7;
   margin-bottom: 12px;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--color-text-body);
 }
 
 .card a {
-  color: var(--color-accent);
   text-decoration: underline;
+  color: var(--color-link);
   transition: color 0.3s;
 }
 
-.card a:hover { color: var(--color-main); }
-
-
-/* ===== お知らせ画像（バナー） ===== */
-.pic {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.pic img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-/* ===== メインコンテンツ（overview・welcome・concert 等） ===== */
-main {
-  width: 80%;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: var(--color-bg-content);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main img {
-  width: 90%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-main h2.heading {
-  font-size: var(--fs-h2);
+.card a:hover {
   color: var(--color-main);
-  margin-bottom: 20px;
-  border-left: 3px solid var(--color-main);
-  padding-left: 10px;
 }
 
-main h3 {
-  font-size: var(--fs-h3);
-  color: var(--color-accent);
-  margin-bottom: 10px;
-}
+/* 団紹介：年間の活動。月と説明の間隔はgapで調整。 */
 
-main p {
-  font-size: var(--fs-base);
-  color: var(--color-text-body);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-main a {
-  color: var(--color-accent);
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-main a:hover { color: var(--color-main); }
-
-
-/* ===== 2枚並び画像 ===== */
-.double-pic {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.double-pic img {
-  width: 45%;
-  height: auto;
-  margin: 3px;
-}
-
-
-/* ===== 年間スケジュール（activity.html） ===== */
 .timeline {
   margin: 24px 0 40px;
-  border-left: 3px solid var(--color-border-nav);
   padding-left: 24px;
+  border-left: 3px solid #cccccc;
 }
- 
+
 .timeline-item {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 16px;
   margin-bottom: 24px;
-  position: relative;
 }
- 
+
 /* タイムラインの点 */
+
 .timeline-item::before {
-  content: "";
   position: absolute;
-  left: -31px;
   top: 6px;
+  left: -31px;
   width: 12px;
   height: 12px;
+  background-color: #cccccc;
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  background-color: var(--color-border-nav);
-  border: 2px solid var(--color-bg-content);
+  content: "";
 }
- 
+
 .timeline-item.highlight::before {
-  background-color: var(--color-accent);
+  top: 4px;
+  left: -33px;
   width: 16px;
   height: 16px;
-  left: -33px;
-  top: 4px;
+  background-color: var(--color-accent);
 }
- 
+
 .timeline-month {
   min-width: 48px;
-  font-size: var(--fs-small);
+  padding-top: 2px;
+  font-size: var(--fs-body);
   font-weight: 500;
   color: var(--color-text-body);
-  padding-top: 2px;
 }
- 
-.timeline-month.accent { color: var(--color-accent); font-weight: bold; }
-.timeline-month.main   { color: var(--color-main);   font-weight: bold; }
- 
-.timeline-content h3 {
-  font-size: var(--fs-h3);
+
+.timeline-month.accent {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.timeline-month.main {
+  font-weight: bold;
   color: var(--color-main);
+}
+
+.timeline-content h3 {
   margin-bottom: 4px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-main);
 }
- 
+
 .timeline-content p {
-  font-size: var(--fs-small);
-  color: var(--color-text-body);
-  line-height: 1.6;
   margin-bottom: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text-body);
 }
- 
- 
-/* ===== 一日の活動の流れ（activity.html） ===== */
+
+/* 団紹介：一日の活動。各段階の枠と番号。 */
+
 .daily-flow {
   margin: 24px 0;
 }
- 
+
 .flow-step {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background-color: var(--color-bg-content);
-  border: 1px solid var(--color-border-nav);
-  border-radius: var(--border-radius-lg, 12px);
   padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 12px;
 }
- 
+
 .flow-step.highlight {
-  border-color: var(--color-main);
   border-width: 2px;
+  border-color: var(--color-main);
 }
- 
+
 .flow-icon {
-  min-width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--color-border-nav);
-  color: var(--color-text-body);
-  font-size: var(--fs-small);
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  font-size: var(--fs-body);
+  font-weight: bold;
+  color: var(--color-text-body);
+  background-color: #cccccc;
+  border-radius: 50%;
   flex-shrink: 0;
 }
- 
+
 .flow-icon.main {
-  background-color: var(--color-main);
   color: #ffffff;
+  background-color: var(--color-main);
 }
- 
+
 .flow-body h3 {
-  font-size: var(--fs-h3);
-  color: var(--color-main);
   margin-bottom: 4px;
+  font-size: var(--fs-subtitle);
+  color: var(--color-main);
 }
- 
+
 .flow-body p {
-  font-size: var(--fs-small);
-  color: var(--color-text-body);
-  line-height: 1.6;
   margin-bottom: 0;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text-body);
 }
- 
+
 .flow-arrow {
+  margin: 4px 0;
+  font-size: 20px;
+  line-height: 1;
   text-align: center;
   color: var(--color-accent);
-  font-size: 20px;
-  margin: 4px 0;
-  line-height: 1;
+}
+
+/* 新歓：よくある質問。質問と回答の見た目。 */
+
+.faq {
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.faq .faq-q {
+  margin-bottom: 4px;
+  font-size: var(--fs-subtitle);
+  font-weight: bold;
+  color: var(--color-main);
+}
+
+.faq .faq-a {
+  margin-bottom: 0;
+  color: var(--color-text-body);
+}
+
+/* 過去一覧：演奏会の見た目は「3 共通部品」で共用。 */
+
+/* ニュース：記事同士の区切りと画像の最大幅。 */
+
+.news-entry {
+  padding: 24px 0;
+  overflow-wrap: anywhere;
+  border-top: 1px solid #cccccc;
+}
+
+.news-entry .pic img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
 }
 
 
-
-/* ===== フッター ===== */
+/* ===== 6 フッター：_includes/footer.html ===== */
 footer {
   width: 100%;
-  background-color: var(--color-main);
   color: #ffffff;
+  background-color: var(--color-main);
 }
 
 .footer-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
   gap: 0 40px;
   max-width: 1100px;
   margin: 0 auto;
@@ -478,31 +613,33 @@ footer {
 }
 
 .footer-item h4 {
-  font-size: var(--fs-h4);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  font-size: var(--fs-body);
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 8px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 4px;
 }
 
 .footer-item p {
-  font-size: var(--fs-small);
-  color: rgba(255,255,255,0.85);
-  line-height: 1.7;
   margin-bottom: 4px;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
 }
 
 .footer-item a {
   display: block;
-  font-size: var(--fs-small);
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
   margin-bottom: 4px;
+  font-size: var(--fs-body);
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
   transition: color 0.2s;
 }
 
-.footer-item a:hover { color: var(--color-accent); }
+.footer-item a:hover {
+  color: var(--color-accent);
+}
 
 .footer-item img {
   display: block;
@@ -511,66 +648,48 @@ footer {
   margin-bottom: 8px;
 }
 
+/* メールアドレスは文章中に置く。他の案内リンクは縦並びのまま。 */
 
-/* ===== よくある質問（welcome.html） ===== */
-.faq {
-  border-left: 3px solid var(--color-border-faq);
-  padding-left: 12px;
-  margin-bottom: 24px;
-}
-
-.faq .faq-q {
-  font-weight: bold;
-  color: var(--color-main);
-  margin-bottom: 4px;
-}
-
-.faq .faq-a {
-  color: var(--color-text-body);
-  margin-bottom: 0;
+.footer-item p a {
+  display: inline;
+  overflow-wrap: anywhere;
 }
 
 
-/* ===== 演奏会エントリー（concert.html） ===== */
-.concert-entry {
-  border-bottom: 1px solid var(--color-border-nav);
-  padding-bottom: 24px;
-  margin-bottom: 24px;
-}
+/* ===== 7 スマートフォン向け：画面幅が小さい場合だけ変更 ===== */
+/* 768px以下：PCメニューからスマートフォン用メニューに切り替える。 */
 
-.concert-entry:last-of-type { border-bottom: none; }
-
-main .concert-flyer,
-.card .concert-flyer {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin: 12px auto 20px;
-}
-
-
-/* ===== レスポンシブ: タブレット以下（768px） ===== */
 @media (max-width: 768px) {
-  .mo_menu { display: block; }
-  .pc_menu { display: none; }
+  .mo_menu {
+    display: block;
+  }
 
-  main { width: 90%; }
+  .pc_menu {
+    display: none;
+  }
 
-  header { padding: 0; }
-
-  header img {
-    max-width: 100%;
+  main {
     width: 90%;
   }
 
-  .top-cards { grid-template-columns: repeat(2, 1fr); }
+  /* ロゴと右上のメニューボタンが重ならないよう右側に余白を確保 */
+
+  header {
+    padding: 12px 72px 12px 12px;
+  }
+
+  header img {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
+/* 600px以下：カードを1列、フッターと画像を縦並びにする。 */
 
-/* ===== レスポンシブ: スマートフォン（600px） ===== */
 @media (max-width: 600px) {
-  .top-cards { grid-template-columns: 1fr; }
+  .top-cards {
+    grid-template-columns: 1fr;
+  }
 
   .footer-container {
     flex-direction: column;
@@ -580,31 +699,6 @@ main .concert-flyer,
 
   main img {
     width: 100%;
-    object-fit: contain;
     margin: 0;
+    object-fit: contain;
   }
-
-  .double-pic {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .double-pic img {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* ===== ニュース ===== */
-.news-entry {
-  padding: 24px 0;
-  border-top: 1px solid var(--color-border-nav);
-  overflow-wrap: anywhere;
-}
-
-.news-entry .pic img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto;
-}
