@@ -149,6 +149,7 @@ header img {
 .pc_menu nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -592,4 +593,18 @@ main .concert-flyer,
     width: 100%;
     margin-bottom: 10px;
   }
+}
+
+/* ===== ニュース ===== */
+.news-entry {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-border-nav);
+  overflow-wrap: anywhere;
+}
+
+.news-entry .pic img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
 }
