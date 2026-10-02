@@ -48,7 +48,7 @@
   {% endif %}
 
   {% if event.admission != blank %}
-    <p>入場料・入場条件：{{ event.admission | escape }}</p>
+    <p>入場料：{{ event.admission | escape }}</p>
   {% endif %}
 
   {% if event.note != blank %}
