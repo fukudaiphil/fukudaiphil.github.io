@@ -10,31 +10,31 @@
   {% elsif event.status == "closed" %}
     <p>販売・参加受付は終了しました。</p>
   {% endif %}
-
-  {% if event.flyer != blank %}
+  
+  {% if event.flyer and event.flyer != "" %}
     <img
       src="{{ event.flyer | relative_url | escape }}"
       alt="{{ event.title | escape }}のチラシ"
       class="concert-flyer">
   {% endif %}
 
-  {% if event.conductor != blank %}
+  {% if event.conductor and event.conductor != "" %}
     <p>指揮：{{ event.conductor | escape }}</p>
   {% endif %}
 
-  {% if event.date != blank %}
+  {% if event.date and event.date != "" %}
     <p>
       日時：{{ event.date | date: "%Y年%-m月%-d日" }}
-      {% if event.open_time != blank %}
+      {% if event.open_time and event.open_time != "" %}
         ／ {{ event.open_time | escape }}開場
       {% endif %}
-      {% if event.start_time != blank %}
+      {% if event.start_time and event.start_time != "" %}
         ／ {{ event.start_time | escape }}開演
       {% endif %}
     </p>
   {% endif %}
 
-  {% if event.venue != blank %}
+  {% if event.venue and event.venue != "" %}
     <p>会場：{{ event.venue | escape }}</p>
   {% endif %}
 
@@ -47,28 +47,28 @@
     </p>
   {% endif %}
 
-  {% if event.admission != blank %}
+  {% if event.admission and event.admission != "" %}
     <p>入場料：{{ event.admission | escape }}</p>
   {% endif %}
 
-  {% if event.note != blank %}
+  {% if event.note and event.note != "" %}
     <p>{{ event.note | escape | newline_to_br }}</p>
   {% endif %}
 
   {% if event.status == "accepting" %}
-    {% if event.ticket_url != blank %}
+    {% if event.ticket_url and event.ticket_url != "" %}
       <p>
         <a href="{{ event.ticket_url | escape }}">チケットを購入する</a>
       </p>
     {% endif %}
-    {% if event.registration_url != blank %}
+    {% if event.registration_url and event.registration_url != "" %}
       <p>
         <a href="{{ event.registration_url | escape }}">参加を申し込む</a>
       </p>
     {% endif %}
   {% endif %}
 
-  {% if event.status == "finished" and event.report != blank %}
+  {% if event.status == "finished" and event.report and event.report != "" %}
     <p>{{ event.report | escape | newline_to_br }}</p>
   {% endif %}
 </div>

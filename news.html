@@ -26,17 +26,17 @@
         <h3>{{ item.title | escape }}</h3>
 
         <p>
-          {% if item.date != blank %}
+          {% if item.date and item.date != "" %}
             <time datetime="{{ item.date | escape }}">
               {{ item.date | date: "%Y年%-m月%-d日" }}
             </time>
           {% endif %}
-          {% if item.category != blank %}
+          {% if item.category and item.category != "" %}
             ／ {{ item.category | escape }}
           {% endif %}
         </p>
 
-        {% if item.image != blank %}
+        {% if item.image and item.image != "" %}
           <div class="pic">
             <img
               src="{{ item.image | relative_url | escape }}"
@@ -47,7 +47,7 @@
 
         <p>{{ item.body | escape | newline_to_br }}</p>
 
-        {% if item.link_url != blank %}
+        {% if item.link_url and item.link_url != "" %}
           <p>
             <a href="{{ item.link_url | escape }}">
               {{ item.link_text | default: "関連情報を見る" | escape }}
